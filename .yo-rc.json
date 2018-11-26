@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.daicq",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.6.0",
+    "applicationType": "monolith",
+    "baseName": "bookDemo",
+    "packageName": "com.daicq",
+    "packageFolder": "com/daicq",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "couchbase",
+    "devDatabaseType": "couchbase",
+    "prodDatabaseType": "couchbase",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MDJjNDYyNDE4NDMzYjY2OWE5MWU4OGI3NGI0OTMwOTQ0NDkzZTczMmRkYmIzOTUyOTkxZWYyNDk3Y2JkNzNmY2UzNzIzMjRjMzU3NGI1Y2M1ZGFkYzM4ZGFiNGUxN2Q4NGJjNTAyYjNiZGY1NzU1YWFkZWQxY2FmMWQ5ZjY3OTg=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ]
+  }
+}

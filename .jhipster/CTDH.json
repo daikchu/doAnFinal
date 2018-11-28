@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "sachId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "soLuong",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "thanhTien",
+            "fieldType": "Float"
+        }
+    ],
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "ctdh",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

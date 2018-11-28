@@ -1,0 +1,26 @@
+{
+    "bookDemoApp": {
+        "quangCao": {
+            "home": {
+                "title": "Quang Caos",
+                "createLabel": "Create a new Quang Cao",
+                "createOrEditLabel": "Create or edit a Quang Cao"
+            },
+            "created": "A new Quang Cao is created with identifier {{ param }}",
+            "updated": "A Quang Cao is updated with identifier {{ param }}",
+            "deleted": "A Quang Cao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Quang Cao {{ id }}?"
+            },
+            "detail": {
+                "title": "Quang Cao"
+            },
+            "tieuDe": "Tieu De",
+            "noiDung": "Noi Dung",
+            "imageUrl": "Image Url",
+            "timeStart": "Time Start",
+            "timeEnd": "Time End",
+            "link": "Link"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "khachHangId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "loaiKH",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayLap",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "tenKHVangLai",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addrKHVangLai",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sdtKHVangLai",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "trangThaiNhan",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "trangThaiThanhToan",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "hoa_don",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

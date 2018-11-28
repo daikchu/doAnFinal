@@ -1,0 +1,27 @@
+{
+    "bookDemoApp": {
+        "khuyenMai": {
+            "home": {
+                "title": "Khuyen Mais",
+                "createLabel": "Create a new Khuyen Mai",
+                "createOrEditLabel": "Create or edit a Khuyen Mai"
+            },
+            "created": "A new Khuyen Mai is created with identifier {{ param }}",
+            "updated": "A Khuyen Mai is updated with identifier {{ param }}",
+            "deleted": "A Khuyen Mai is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Khuyen Mai {{ id }}?"
+            },
+            "detail": {
+                "title": "Khuyen Mai"
+            },
+            "tieuDe": "Tieu De",
+            "noiDung": "Noi Dung",
+            "loaiApDung": "Loai Ap Dung",
+            "timeStart": "Time Start",
+            "timeEnd": "Time End",
+            "mucKM": "Muc KM",
+            "status": "Status"
+        }
+    }
+}

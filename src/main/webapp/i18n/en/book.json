@@ -1,0 +1,34 @@
+{
+    "bookDemoApp": {
+        "book": {
+            "home": {
+                "title": "Books",
+                "createLabel": "Create a new Book",
+                "createOrEditLabel": "Create or edit a Book"
+            },
+            "created": "A new Book is created with identifier {{ param }}",
+            "updated": "A Book is updated with identifier {{ param }}",
+            "deleted": "A Book is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Book {{ id }}?"
+            },
+            "detail": {
+                "title": "Book"
+            },
+            "ten": "Ten",
+            "imageUrl": "Image Url",
+            "tacGia": "Tac Gia",
+            "nhaXB": "Nha XB",
+            "namXB": "Nam XB",
+            "moTa": "Mo Ta",
+            "giaNhap": "Gia Nhap",
+            "giaBanGoc": "Gia Ban Goc",
+            "giaKM": "Gia KM",
+            "loai": "Loai",
+            "soLuongCon": "So Luong Con",
+            "soLuongNhap": "So Luong Nhap",
+            "soLanXem": "So Lan Xem",
+            "note": "Note"
+        }
+    }
+}

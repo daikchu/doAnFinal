@@ -1,0 +1,25 @@
+{
+    "bookDemoApp": {
+        "gioHang": {
+            "home": {
+                "title": "Gio Hangs",
+                "createLabel": "Create a new Gio Hang",
+                "createOrEditLabel": "Create or edit a Gio Hang"
+            },
+            "created": "A new Gio Hang is created with identifier {{ param }}",
+            "updated": "A Gio Hang is updated with identifier {{ param }}",
+            "deleted": "A Gio Hang is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Gio Hang {{ id }}?"
+            },
+            "detail": {
+                "title": "Gio Hang"
+            },
+            "token": "Token",
+            "cTDHId": "C TDH Id",
+            "userId": "User Id",
+            "dateUpdate": "Date Update",
+            "status": "Status"
+        }
+    }
+}

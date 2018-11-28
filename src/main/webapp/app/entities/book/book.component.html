@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="bookDemoApp.book.home.title">Books</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-book" [routerLink]="['/book/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="bookDemoApp.book.home.createLabel">
+            Create new Book
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="books">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ten"><span jhiTranslate="bookDemoApp.book.ten">Ten</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imageUrl"><span jhiTranslate="bookDemoApp.book.imageUrl">Image Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tacGia"><span jhiTranslate="bookDemoApp.book.tacGia">Tac Gia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nhaXB"><span jhiTranslate="bookDemoApp.book.nhaXB">Nha XB</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="namXB"><span jhiTranslate="bookDemoApp.book.namXB">Nam XB</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="moTa"><span jhiTranslate="bookDemoApp.book.moTa">Mo Ta</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="giaNhap"><span jhiTranslate="bookDemoApp.book.giaNhap">Gia Nhap</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="giaBanGoc"><span jhiTranslate="bookDemoApp.book.giaBanGoc">Gia Ban Goc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="giaKM"><span jhiTranslate="bookDemoApp.book.giaKM">Gia KM</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="loai"><span jhiTranslate="bookDemoApp.book.loai">Loai</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="soLuongCon"><span jhiTranslate="bookDemoApp.book.soLuongCon">So Luong Con</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="soLuongNhap"><span jhiTranslate="bookDemoApp.book.soLuongNhap">So Luong Nhap</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="soLanXem"><span jhiTranslate="bookDemoApp.book.soLanXem">So Lan Xem</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="note"><span jhiTranslate="bookDemoApp.book.note">Note</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of books ;trackBy: trackId">
+                <td><a [routerLink]="['/book', book.id, 'view' ]">{{book.id}}</a></td>
+                <td>{{book.ten}}</td>
+                <td>{{book.imageUrl}}</td>
+                <td>{{book.tacGia}}</td>
+                <td>{{book.nhaXB}}</td>
+                <td>{{book.namXB}}</td>
+                <td>{{book.moTa}}</td>
+                <td>{{book.giaNhap}}</td>
+                <td>{{book.giaBanGoc}}</td>
+                <td>{{book.giaKM}}</td>
+                <td>{{book.loai}}</td>
+                <td>{{book.soLuongCon}}</td>
+                <td>{{book.soLuongNhap}}</td>
+                <td>{{book.soLanXem}}</td>
+                <td>{{book.note}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/book', book.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/book', book.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'book/'+ book.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="books && books.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

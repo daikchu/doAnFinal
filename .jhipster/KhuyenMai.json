@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tieuDe",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "noiDung",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "loaiApDung",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timeStart",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "timeEnd",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "mucKM",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        }
+    ],
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "khuyen_mai",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

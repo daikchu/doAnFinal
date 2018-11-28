@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-nha-xuat-ban-heading" jhiTranslate="bookDemoApp.nhaXuatBan.home.createOrEditLabel">Create or edit a Nha Xuat Ban</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!nhaXuatBan.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="nhaXuatBan.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.nhaXuatBan.ten" for="field_ten">Ten</label>
+                    <input type="text" class="form-control" name="ten" id="field_ten"
+                        [(ngModel)]="nhaXuatBan.ten" required/>
+                    <div [hidden]="!(editForm.controls.ten?.dirty && editForm.controls.ten?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ten?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.nhaXuatBan.diaChi" for="field_diaChi">Dia Chi</label>
+                    <input type="text" class="form-control" name="diaChi" id="field_diaChi"
+                        [(ngModel)]="nhaXuatBan.diaChi" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.nhaXuatBan.sdt" for="field_sdt">Sdt</label>
+                    <input type="text" class="form-control" name="sdt" id="field_sdt"
+                        [(ngModel)]="nhaXuatBan.sdt" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.nhaXuatBan.chietKhau" for="field_chietKhau">Chiet Khau</label>
+                    <input type="number" class="form-control" name="chietKhau" id="field_chietKhau"
+                        [(ngModel)]="nhaXuatBan.chietKhau" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

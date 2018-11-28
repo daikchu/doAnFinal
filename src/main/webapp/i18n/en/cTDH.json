@@ -1,0 +1,23 @@
+{
+    "bookDemoApp": {
+        "cTDH": {
+            "home": {
+                "title": "CTDHS",
+                "createLabel": "Create a new CTDH",
+                "createOrEditLabel": "Create or edit a CTDH"
+            },
+            "created": "A new CTDH is created with identifier {{ param }}",
+            "updated": "A CTDH is updated with identifier {{ param }}",
+            "deleted": "A CTDH is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete CTDH {{ id }}?"
+            },
+            "detail": {
+                "title": "CTDH"
+            },
+            "sachId": "Sach Id",
+            "soLuong": "So Luong",
+            "thanhTien": "Thanh Tien"
+        }
+    }
+}

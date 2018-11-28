@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tacGia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nhaXB",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "namXB",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moTa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "giaNhap",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "giaBanGoc",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "giaKM",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "loai",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soLuongCon",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "soLuongNhap",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "soLanXem",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "book",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

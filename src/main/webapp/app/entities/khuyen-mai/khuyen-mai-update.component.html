@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-khuyen-mai-heading" jhiTranslate="bookDemoApp.khuyenMai.home.createOrEditLabel">Create or edit a Khuyen Mai</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!khuyenMai.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="khuyenMai.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.tieuDe" for="field_tieuDe">Tieu De</label>
+                    <input type="text" class="form-control" name="tieuDe" id="field_tieuDe"
+                        [(ngModel)]="khuyenMai.tieuDe" required/>
+                    <div [hidden]="!(editForm.controls.tieuDe?.dirty && editForm.controls.tieuDe?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tieuDe?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.noiDung" for="field_noiDung">Noi Dung</label>
+                    <input type="text" class="form-control" name="noiDung" id="field_noiDung"
+                        [(ngModel)]="khuyenMai.noiDung" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.loaiApDung" for="field_loaiApDung">Loai Ap Dung</label>
+                    <input type="text" class="form-control" name="loaiApDung" id="field_loaiApDung"
+                        [(ngModel)]="khuyenMai.loaiApDung" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.timeStart" for="field_timeStart">Time Start</label>
+                    <div class="d-flex">
+                        <input id="field_timeStart" type="datetime-local" class="form-control" name="timeStart" [(ngModel)]="timeStart"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.timeEnd" for="field_timeEnd">Time End</label>
+                    <div class="d-flex">
+                        <input id="field_timeEnd" type="datetime-local" class="form-control" name="timeEnd" [(ngModel)]="timeEnd"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.mucKM" for="field_mucKM">Muc KM</label>
+                    <input type="number" class="form-control" name="mucKM" id="field_mucKM"
+                        [(ngModel)]="khuyenMai.mucKM" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bookDemoApp.khuyenMai.status" for="field_status">Status</label>
+                    <input type="number" class="form-control" name="status" id="field_status"
+                        [(ngModel)]="khuyenMai.status" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

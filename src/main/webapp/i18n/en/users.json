@@ -1,0 +1,35 @@
+{
+    "bookDemoApp": {
+        "users": {
+            "home": {
+                "title": "Users",
+                "createLabel": "Create a new Users",
+                "createOrEditLabel": "Create or edit a Users"
+            },
+            "created": "A new Users is created with identifier {{ param }}",
+            "updated": "A Users is updated with identifier {{ param }}",
+            "deleted": "A Users is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Users {{ id }}?"
+            },
+            "detail": {
+                "title": "Users"
+            },
+            "userName": "User Name",
+            "password": "Password",
+            "email": "Email",
+            "phone": "Phone",
+            "address": "Address",
+            "fullName": "Full Name",
+            "startDate": "Start Date",
+            "trangThai": "Trang Thai",
+            "cmnd": "Cmnd",
+            "ngaySinh": "Ngay Sinh",
+            "gioiTinh": "Gioi Tinh",
+            "roles": "Roles",
+            "dateCreated": "Date Created",
+            "dateUpdated": "Date Updated",
+            "type": "Type"
+        }
+    }
+}

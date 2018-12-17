@@ -5,6 +5,7 @@ import com.daicq.service.dto.BookDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -28,6 +29,7 @@ public interface BookService {
      */
     Page<BookDTO> findAll(Pageable pageable);
 
+    List<BookDTO> findAll();
 
     /**
      * Get the "id" book.
@@ -36,6 +38,12 @@ public interface BookService {
      * @return the entity
      */
     Optional<BookDTO> findOne(String id);
+
+    List<BookDTO> findByDanhMucId(String danhMucId);
+
+    List<BookDTO> findByNhaXB(String nhaXB);
+
+    BookDTO findById(String id);
 
     /**
      * Delete the "id" book.

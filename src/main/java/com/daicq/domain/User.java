@@ -16,10 +16,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.time.Instant;
 
 import static com.daicq.config.Constants.ID_DELIMITER;
@@ -87,6 +84,16 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Field("reset_date")
     private Instant resetDate = null;
+
+    /*@NotNull
+    @Field("user_name")
+    private String userName;*/
+
+    @Field("full_name")
+    private String fullName;
+
+    @Field("roles")
+    private List<String> roles;
 
     @JsonIgnore
     private Set<String> authorities = new HashSet<>();
@@ -196,6 +203,30 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.authorities = authorities;
     }
 
+   /* public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }*/
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -225,6 +256,9 @@ public class User extends AbstractAuditingEntity implements Serializable {
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +
             ", activationKey='" + activationKey + '\'' +
+            /*", userName='" + userName + '\'' +*/
+            ", fullName='" + fullName + '\'' +
+            ", roles='" + roles + '\'' +
             "}";
     }
 }

@@ -1,0 +1,21 @@
+{
+    "bookDemoApp": {
+        "danhMuc": {
+            "home": {
+                "title": "Danh Mucs",
+                "createLabel": "Create a new Danh Muc",
+                "createOrEditLabel": "Create or edit a Danh Muc"
+            },
+            "created": "A new Danh Muc is created with identifier {{ param }}",
+            "updated": "A Danh Muc is updated with identifier {{ param }}",
+            "deleted": "A Danh Muc is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Danh Muc {{ id }}?"
+            },
+            "detail": {
+                "title": "Danh Muc"
+            },
+            "name": "Name"
+        }
+    }
+}

@@ -37,4 +37,6 @@ public interface UserRepository extends N1qlCouchbaseRepository<User, String> {
     }
 
     Page<User> findAllByLoginNot(Pageable pageable, String login);
+
+    User findUserByLogin(String login);
 }

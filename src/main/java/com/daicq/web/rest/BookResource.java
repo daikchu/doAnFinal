@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,8 +27,8 @@ import java.util.Optional;
 /**
  * REST controller for managing Book.
  */
-@RestController
-@RequestMapping("/api")
+@Controller
+@RequestMapping("/book")
 public class BookResource {
 
     private final Logger log = LoggerFactory.getLogger(BookResource.class);
@@ -47,7 +48,7 @@ public class BookResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new bookDTO, or with status 400 (Bad Request) if the book has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/books")
+    @PostMapping("/create")
     @Timed
     public ResponseEntity<BookDTO> createBook(@Valid @RequestBody BookDTO bookDTO) throws URISyntaxException {
         log.debug("REST request to save Book : {}", bookDTO);
@@ -69,7 +70,7 @@ public class BookResource {
      * or with status 500 (Internal Server Error) if the bookDTO couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PutMapping("/books")
+    @PutMapping("/update")
     @Timed
     public ResponseEntity<BookDTO> updateBook(@Valid @RequestBody BookDTO bookDTO) throws URISyntaxException {
         log.debug("REST request to update Book : {}", bookDTO);
@@ -88,13 +89,14 @@ public class BookResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of books in body
      */
-    @GetMapping("/books")
+    @GetMapping("/get-all")
     @Timed
     public ResponseEntity<List<BookDTO>> getAllBooks(Pageable pageable) {
         log.debug("REST request to get a page of Books");
         Page<BookDTO> page = bookService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/books");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+       /* return "login";*/
     }
 
     /**
@@ -103,12 +105,13 @@ public class BookResource {
      * @param id the id of the bookDTO to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the bookDTO, or with status 404 (Not Found)
      */
-    @GetMapping("/books/{id}")
+    @GetMapping("/get-one/{id}")
     @Timed
-    public ResponseEntity<BookDTO> getBook(@PathVariable String id) {
+    public String getBook(@PathVariable String id) {
         log.debug("REST request to get Book : {}", id);
         Optional<BookDTO> bookDTO = bookService.findOne(id);
-        return ResponseUtil.wrapOrNotFound(bookDTO);
+        /*return ResponseUtil.wrapOrNotFound(bookDTO);*/
+        return "login";
     }
 
     /**
@@ -117,7 +120,7 @@ public class BookResource {
      * @param id the id of the bookDTO to delete
      * @return the ResponseEntity with status 200 (OK)
      */
-    @DeleteMapping("/books/{id}")
+    @DeleteMapping("/delete/{id}")
     @Timed
     public ResponseEntity<Void> deleteBook(@PathVariable String id) {
         log.debug("REST request to delete Book : {}", id);

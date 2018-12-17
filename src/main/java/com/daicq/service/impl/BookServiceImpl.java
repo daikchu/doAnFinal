@@ -4,6 +4,7 @@ import com.daicq.service.BookService;
 import com.daicq.domain.Book;
 import com.daicq.repository.BookRepository;
 import com.daicq.service.dto.BookDTO;
+import com.daicq.service.dto.DanhMucDTO;
 import com.daicq.service.mapper.BookMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -59,6 +61,11 @@ public class BookServiceImpl implements BookService {
             .map(bookMapper::toDto);
     }
 
+    @Override
+    public List<BookDTO> findAll() {
+        return bookMapper.toDto(bookRepository.findAll());
+    }
+
 
     /**
      * Get one book by id.
@@ -71,6 +78,26 @@ public class BookServiceImpl implements BookService {
         log.debug("Request to get Book : {}", id);
         return bookRepository.findById(id)
             .map(bookMapper::toDto);
+    }
+
+    @Override
+    public List<BookDTO> findByDanhMucId(String danhMucId) {
+        log.debug("Request to get all Book by danh muc: {}", danhMucId);
+        List<Book> books = bookRepository.findAllByDanhMucId(danhMucId);
+        return bookMapper.toDto(books);
+    }
+
+    @Override
+    public List<BookDTO> findByNhaXB(String nhaXB) {
+        log.debug("Request to get all Book by nhaXB: {}", nhaXB);
+        List<Book> books = bookRepository.findAllByNhaXB(nhaXB);
+        return bookMapper.toDto(books);
+    }
+
+    @Override
+    public BookDTO findById(String id) {
+        Book book = bookRepository.findBookById(id);
+        return bookMapper.toDto(book);
     }
 
     /**

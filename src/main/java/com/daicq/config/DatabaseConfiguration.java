@@ -65,14 +65,14 @@ public class DatabaseConfiguration {
         return new CouchbaseCustomConversions(converters);
     }
 
-    @Bean
+ /*   @Bean
     public Couchmove couchmove(Bucket couchbaseBucket) {
         log.debug("Configuring Couchmove");
         Couchmove couchMove = new Couchmove(couchbaseBucket, "config/couchmove/changelog");
         couchMove.migrate();
         return couchMove;
     }
-
+*/
     /**
      * Simple singleton to convert {@link ZonedDateTime}s to their {@link Long} representation.
      */

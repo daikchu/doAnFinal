@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="users">
+            <h2><span jhiTranslate="bookDemoApp.users.detail.title">Users</span> {{users.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bookDemoApp.users.userName">User Name</span></dt>
+                <dd>
+                    <span>{{users.userName}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.password">Password</span></dt>
+                <dd>
+                    <span>{{users.password}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.email">Email</span></dt>
+                <dd>
+                    <span>{{users.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.phone">Phone</span></dt>
+                <dd>
+                    <span>{{users.phone}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.address">Address</span></dt>
+                <dd>
+                    <span>{{users.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.fullName">Full Name</span></dt>
+                <dd>
+                    <span>{{users.fullName}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{users.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.trangThai">Trang Thai</span></dt>
+                <dd>
+                    <span>{{users.trangThai}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.cmnd">Cmnd</span></dt>
+                <dd>
+                    <span>{{users.cmnd}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.ngaySinh">Ngay Sinh</span></dt>
+                <dd>
+                    <span>{{users.ngaySinh}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.gioiTinh">Gioi Tinh</span></dt>
+                <dd>
+                    <span>{{users.gioiTinh}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.roles">Roles</span></dt>
+                <dd>
+                    <span>{{users.roles}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.dateCreated">Date Created</span></dt>
+                <dd>
+                    <span>{{users.dateCreated}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.dateUpdated">Date Updated</span></dt>
+                <dd>
+                    <span>{{users.dateUpdated}}</span>
+                </dd>
+                <dt><span jhiTranslate="bookDemoApp.users.type">Type</span></dt>
+                <dd>
+                    <span>{{users.type}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/users', users.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

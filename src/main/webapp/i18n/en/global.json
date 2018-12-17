@@ -14,6 +14,8 @@
                 "quangCao": "Quang Cao",
                 "khuyenMai": "Khuyen Mai",
                 "gioHang": "Gio Hang",
+                "danhMuc": "Danh Muc",
+                "users": "Users",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -26,7 +26,8 @@ eureka:
         enabled: false # By default, the JHipster Registry is not used in the "dev" profile
         service-url:
             defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
-
+#spring.mvc.view.prefix: /WEB-INF/jsp/
+#spring.mvc.view.suffix: .jsp
 spring:
     profiles:
         active: dev
@@ -53,8 +54,13 @@ spring:
         password:
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
-    thymeleaf:
-        cache: false
+#    thymeleaf:
+#        cache: false
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+
     sleuth:
         sampler:
             probability: 1 # report 100% of traces

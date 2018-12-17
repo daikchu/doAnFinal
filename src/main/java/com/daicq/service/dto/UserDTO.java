@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 import javax.validation.constraints.*;
 import java.time.Instant;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,7 +22,7 @@ public class UserDTO {
     @NotBlank
     @Pattern(regexp = Constants.LOGIN_REGEX)
     @Size(min = 1, max = 50)
-    private String login;
+    private String login;//is user name
 
     @Size(max = 50)
     private String firstName;
@@ -51,13 +52,19 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    private String fullName;
+
+    private String passText;
+
+    private List<String> roles;
+
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
 
     public UserDTO(User user) {
         this.id = user.getId();
-        this.login = user.getLogin();
+      //  this.login = user.getLogin();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
         this.email = user.getEmail();
@@ -69,6 +76,9 @@ public class UserDTO {
         this.lastModifiedBy = user.getLastModifiedBy();
         this.lastModifiedDate = user.getLastModifiedDate();
         this.authorities = user.getAuthorities();
+       // this.passText = user.getUserName();
+        this.fullName = user.getFullName();
+        this.roles = user.getRoles();
     }
 
     public String getId() {
@@ -175,6 +185,22 @@ public class UserDTO {
         this.authorities = authorities;
     }
 
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getPassText() {
+        return passText;
+    }
+
+    public void setPassText(String passText) {
+        this.passText = passText;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -190,6 +216,9 @@ public class UserDTO {
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
             ", authorities=" + authorities +
+            ", passText='" + passText + '\'' +
+            ", fullName=" + fullName +
+            ", roles=" + roles +
             "}";
     }
 }

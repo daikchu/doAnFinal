@@ -64,11 +64,15 @@ spring:
     messages:
         basename: i18n/messages
     mvc:
-        favicon:
-            enabled: false
-    thymeleaf:
-        mode: HTML
-
+#        favicon:
+#            enabled: false
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+#    thymeleaf:
+#        mode: JSP
+#spring.mvc.view.prefix: /WEB-INF/jsp/
+#spring.mvc.view.suffix: .jsp
 server:
     servlet:
         session:

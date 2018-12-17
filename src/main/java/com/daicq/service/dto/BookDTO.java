@@ -40,6 +40,16 @@ public class BookDTO implements Serializable {
 
     private String note;
 
+    private String danhMucId;
+
+    public String getDanhMucId() {
+        return danhMucId;
+    }
+
+    public void setDanhMucId(String danhMucId) {
+        this.danhMucId = danhMucId;
+    }
+
     public String getId() {
         return id;
     }
@@ -198,6 +208,7 @@ public class BookDTO implements Serializable {
             ", soLuongCon=" + getSoLuongCon() +
             ", soLuongNhap=" + getSoLuongNhap() +
             ", soLanXem=" + getSoLanXem() +
+            ", danhMucId=" + getDanhMucId() +
             ", note='" + getNote() + "'" +
             "}";
     }

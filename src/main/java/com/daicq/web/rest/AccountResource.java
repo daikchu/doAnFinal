@@ -5,7 +5,6 @@ import com.codahale.metrics.annotation.Timed;
 import com.daicq.domain.User;
 import com.daicq.repository.UserRepository;
 import com.daicq.security.SecurityUtils;
-import com.daicq.service.MailService;
 import com.daicq.service.UserService;
 import com.daicq.service.dto.PasswordChangeDTO;
 import com.daicq.service.dto.UserDTO;
@@ -37,13 +36,12 @@ public class AccountResource {
 
     private final UserService userService;
 
-    private final MailService mailService;
 
-    public AccountResource(UserRepository userRepository, UserService userService, MailService mailService) {
+
+    public AccountResource(UserRepository userRepository, UserService userService) {
 
         this.userRepository = userRepository;
         this.userService = userService;
-        this.mailService = mailService;
     }
 
     /**
@@ -62,7 +60,6 @@ public class AccountResource {
             throw new InvalidPasswordException();
         }
         User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
-        mailService.sendActivationEmail(user);
     }
 
     /**
@@ -154,10 +151,7 @@ public class AccountResource {
     @PostMapping(path = "/account/reset-password/init")
     @Timed
     public void requestPasswordReset(@RequestBody String mail) {
-       mailService.sendPasswordResetMail(
-           userService.requestPasswordReset(mail)
-               .orElseThrow(EmailNotFoundException::new)
-       );
+
     }
 
     /**

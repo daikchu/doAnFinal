@@ -73,6 +73,9 @@ public class Book implements Serializable {
     @Field("note")
     private String note;
 
+    @Field("danh_muc_id")
+    private String danhMucId;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
         return id;
@@ -93,6 +96,19 @@ public class Book implements Serializable {
 
     public void setTen(String ten) {
         this.ten = ten;
+    }
+
+    public String getDanhMucId() {
+        return danhMucId;
+    }
+
+    public void setDanhMucId(String danhMucId) {
+        this.danhMucId = danhMucId;
+    }
+
+    public Book danhMucId(String danhMucId) {
+        this.danhMucId = danhMucId;
+        return this;
     }
 
     public String getImageUrl() {
@@ -263,6 +279,14 @@ public class Book implements Serializable {
     public void setNote(String note) {
         this.note = note;
     }
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -302,6 +326,7 @@ public class Book implements Serializable {
             ", soLuongCon=" + getSoLuongCon() +
             ", soLuongNhap=" + getSoLuongNhap() +
             ", soLanXem=" + getSoLanXem() +
+            ", danhMucId='" + getDanhMucId() + "'" +
             ", note='" + getNote() + "'" +
             "}";
     }
